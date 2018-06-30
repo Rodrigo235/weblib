@@ -3,8 +3,6 @@
   <persistence-unit name="persistence" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <properties>
-        
-
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/newweblib"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
