@@ -10,7 +10,7 @@ import modelWebLib.UsuarioModel;
 
 @ManagedBean
 @RequestScoped
-public class LoginController {
+public class LoginController  {
     private UsuarioModel um = new UsuarioModel();
     
     private String usuario;
