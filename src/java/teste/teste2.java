@@ -5,10 +5,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import modelWebLib.Entidades.Texto;
+import modelWebLib.TextoModel;
 
 public class teste2 {
 
     public static void testeTexto(EntityManager em) {
+        TextoModel tm = new TextoModel();
         Texto t = new Texto();
         t.setAutor("cw");
         t.setCategoria("poesia");
@@ -49,7 +51,7 @@ public class teste2 {
                 + "escolho testemunhar");
         t.setTitulo("sfsdf");
 
-        em.persist(em);
+        tm.cadastrarTexto(t);
         System.out.println(t.toString());
     }
 
@@ -58,17 +60,10 @@ public class teste2 {
         EntityManager em = emf.createEntityManager();
 
         try {
-            em.getTransaction().begin();
             testeTexto(em);
-            em.getTransaction().commit();
         } catch (Exception e) {
-            e.printStackTrace();
-            em.getTransaction().rollback();
             System.out.println("Erro");
-        } finally {
-            em.close();
-            emf.close();
         }
-
     }
 }
+
